@@ -1,0 +1,47 @@
+---
+---
+
+<section class="hero">
+  <div class="meta">
+    <span class="live">live on bluesky</span>
+    <span>v0.1.0</span>
+    <span>open source</span>
+  </div>
+  <h1>
+    a bluesky bot that DMs you when someone blocks you,<br />
+    <span class="dim"
+      >adds you to a list, or when an account you care about posts.</span
+    >
+  </h1>
+  <p>
+    no app. no website. follow the account, send it a DM. get notifications
+    delivered straight to your inbox instead of buried in the notifications tab.
+  </p>
+  <div class="actions">
+    <a
+      class="btn primary"
+      href="https://bsky.app/profile/lunafications.blue"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      follow @lunafications.blue →
+    </a>
+    <button class="btn" type="button" data-try-demo>
+      try the demo ↓
+    </button>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-try-demo]").forEach(
+    (btn) => {
+      btn.addEventListener("click", () => {
+        const input = document.querySelector<HTMLInputElement>(
+          "#demo-input",
+        );
+        input?.scrollIntoView({ block: "center", behavior: "smooth" });
+        input?.focus();
+      });
+    },
+  );
+</script>

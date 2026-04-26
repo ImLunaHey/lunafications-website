@@ -1,0 +1,57 @@
+---
+const items = [
+  {
+    i: "01",
+    t: "block notifications",
+    d: "find out the moment someone blocks you, plus their handle.",
+    o: "You were blocked by bsky.app",
+  },
+  {
+    i: "02",
+    t: "list & starter pack notifications",
+    d: "get the list or starter pack name, who made it, and what kind it is.",
+    o: 'darkswordsman.com has added you to the "Fake List List" moderation list.',
+  },
+  {
+    i: "03",
+    t: "post monitoring",
+    d:
+      "track specific accounts via the public firehose — blocks don't stop the bot from seeing posts.",
+    o: "tangled.org has made a post.",
+  },
+  {
+    i: "04",
+    t: "all over DMs",
+    d: "no app, no website, no permissions. plain english commands.",
+    o: "notify all → hide all",
+  },
+];
+---
+
+<section class="block" id="features">
+  <div class="block-head">
+    <div class="block-num">03 / what</div>
+    <h2>
+      four things bluesky <span class="dim">won't tell you on its own.</span>
+    </h2>
+  </div>
+  <div class="caps">
+    <div class="num"></div>
+    <div class="caps-list">
+      {
+        items.map((it) => (
+          <div class="cap">
+            <div class="cap-i">{it.i}</div>
+            <div>
+              <h3>{it.t}</h3>
+              <p>{it.d}</p>
+            </div>
+            <div class="ex">
+              → <span class="out">{it.o}</span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

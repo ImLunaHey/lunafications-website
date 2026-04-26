@@ -1,0 +1,67 @@
+---
+const tips: [string, string][] = [
+  ["menu", "welcome"],
+  ["notify all", "all on"],
+  ["notify posts @imlunahey.com", "track"],
+  ["settings", "status"],
+  ["hide all", "all off"],
+];
+---
+
+<section class="block" id="demo">
+  <div class="block-head">
+    <div class="block-num">02 / demo</div>
+    <h2>
+      type a command. <span class="dim"
+        >it replies, exactly like the real one.</span
+      >
+    </h2>
+  </div>
+
+  <div class="demo">
+    <div class="num"></div>
+    <div class="demo-side">
+      <h3>—  this is the bot</h3>
+      <p>
+        same script as the live one. type a command and it answers. after you
+        turn something on, a sample notification follows a moment later — the
+        kind you'd actually receive.
+      </p>
+      <div class="tips-label">— tap to send</div>
+      <div class="tips">
+        {
+          tips.map(([cmd, label]) => (
+            <button class="tip" type="button" data-tip={cmd}>
+              <code>{cmd}</code>
+              <span class="key">{label} ↵</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="lights"><span></span><span></span><span></span></div>
+        <span>@lunafications.blue — dm</span>
+        <span>● online</span>
+      </div>
+      <div class="terminal-feed" id="demo-feed"></div>
+      <form class="composer" id="demo-form">
+        <span class="prompt">›</span>
+        <input
+          id="demo-input"
+          type="text"
+          placeholder="type a command…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="demo-send" type="submit" disabled>send ↵</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/demo";
+</script>

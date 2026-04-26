@@ -1,0 +1,59 @@
+---
+const items: [string, string][] = [
+  [
+    "is this an official bluesky feature?",
+    "no — lunafications is an independent bot. bluesky has since added their own post notifications in the app, but a lot of people still prefer getting them as DMs instead of in the notifications tab.",
+  ],
+  [
+    "does it cost anything?",
+    "no. it's a hobby project. follow, DM, get notifications. that's the whole thing.",
+  ],
+  [
+    "what does it know about me?",
+    "just your handle and what you've asked it to watch. it doesn't read your DMs or anything you haven't asked it to look at.",
+  ],
+  [
+    "can i track someone who has me blocked?",
+    "yes. the bot reads from the public firehose, so blocks don't affect what it can see — if an account is public, it can watch their posts.",
+  ],
+  [
+    "how do i turn it off?",
+    "send hide all in a DM. the bot stops everything immediately. come back any time.",
+  ],
+  [
+    "what if i block @lunafications.blue?",
+    "if you block the bot, it can no longer DM you — so notifications stop arriving. unblock and send menu again to start them back up.",
+  ],
+];
+---
+
+<section class="block" id="faq">
+  <div class="block-head">
+    <div class="block-num">05 / faq</div>
+    <h2>questions, <span class="dim">answered.</span></h2>
+  </div>
+  <div class="faqs">
+    <div class="num"></div>
+    <div class="faq-list">
+      {
+        items.map(([q, a], i) => (
+          <div class:list={["faq-item", { open: i === 0 }]} data-faq>
+            <div class="faq-q">
+              <span>{q}</span>
+              <span class="toggle">+</span>
+            </div>
+            <div class="faq-a">{a}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLDivElement>("[data-faq]").forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("open");
+    });
+  });
+</script>

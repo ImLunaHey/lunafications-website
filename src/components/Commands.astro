@@ -1,0 +1,34 @@
+---
+const commands: [string, string][] = [
+  ["menu", "show available commands"],
+  ["settings", "view what's currently on"],
+  ["notify blocks", "DM me when anyone blocks me"],
+  ["notify lists", "DM me when added to a list"],
+  ["notify all", "blocks + lists at once"],
+  ["notify posts @user", "DM me whenever @user posts"],
+  ["hide blocks", "stop block notifications"],
+  ["hide lists", "stop list notifications"],
+  ["hide posts @user", "stop tracking @user's posts"],
+  ["hide all", "mute everything"],
+];
+---
+
+<section class="block" id="commands">
+  <div class="block-head">
+    <div class="block-num">04 / commands</div>
+    <h2>every command, <span class="dim">in plain english.</span></h2>
+  </div>
+  <div class="cmds">
+    <div class="num"></div>
+    <div class="cmd-list">
+      {
+        commands.map(([cmd, desc]) => (
+          <div class="cmd-row">
+            <code>{cmd}</code>
+            <div class="desc">{desc}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
