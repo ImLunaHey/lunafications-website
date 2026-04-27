@@ -27,6 +27,22 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    {/* Privacy-friendly analytics by Plausible */}
+    <script
+      is:inline
+      async
+      src="https://plausible.io/js/pa-CkU-LUArppb34m-KJySdU.js"></script>
+    <script is:inline>
+      window.plausible = window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        };
+      plausible.init = plausible.init || function (i) {
+        plausible.o = i || {};
+      };
+      plausible.init();
+    </script>
   </head>
   <body>
     <slot />
